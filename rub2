@@ -13,7 +13,7 @@ logger = Loggman.new
 begin
   if ARGV[0] == '--restore'
     unless File.exist?(config_file)
-      logger.error("Configuration file does not exist. Please run the first time setup.")
+      logger.error('Configuration file does not exist. Please run the first time setup.')
       exit 1
     end
 
@@ -25,11 +25,11 @@ begin
     remote_backups = b2_enabled ? `./b2 ls #{config['b2']['bucket_name']}`.split("\n") : []
 
     if local_backups.empty? && remote_backups.empty?
-      logger.error("No backup found. Please ensure a backup exists in the local directory or in the B2 bucket (if B2 is enabled).")
+      logger.error('No backup found. Please ensure a backup exists in the local directory or in the B2 bucket (if B2 is enabled).')
       exit 1
     end
 
-    logger.info("Restoring backup...")
+    logger.info('Restoring backup...')
     restore = MysqlDatabaseRestore.new(config_file, logger)
     restore.restore
   else
