@@ -4,6 +4,7 @@
 
 require_relative 'mysql_database_config'
 require_relative 'mysql_database_backup'
+require_relative 'mysql_database_restore'
 require_relative 'loggman'
 
 config_file = 'config.json'
@@ -11,9 +12,26 @@ logger = Loggman.new
 
 begin
   if ARGV[0] == '--restore'
-    # Call your restore function here with backup_id
-    logger.info("Restoring backup with ID: #{backup_id}")
-    
+    unless File.exist?(config_file)
+      logger.error("Configuration file does not exist. Please run the first time setup.")
+      exit 1
+    end
+
+    config = JSON.parse(File.read(config_file))
+    backup_dir = config['backup_dir'] || '.'
+    b2_enabled = config['b2_enabled'] || false
+
+    local_backups = Dir[File.join(backup_dir, '*_*.sql')]
+    remote_backups = b2_enabled ? `./b2 ls #{config['b2']['bucket_name']}`.split("\n") : []
+
+    if local_backups.empty? && remote_backups.empty?
+      logger.error("No backup found. Please ensure a backup exists in the local directory or in the B2 bucket (if B2 is enabled).")
+      exit 1
+    end
+
+    logger.info("Restoring backup...")
+    restore = MysqlDatabaseRestore.new(config_file, logger)
+    restore.restore
   else
     logger.info('Starting script.')
 
@@ -21,7 +39,7 @@ begin
     config_generator.generate
     logger.info("Generated MySQL database configuration file: #{config_file}.")
 
-    backup = MysqlDatabaseBackup.new(config_file)
+    backup = MysqlDatabaseBackup.new(config_file, logger)
     backup.backup
     logger.info('Performed MySQL database backup.')
 
