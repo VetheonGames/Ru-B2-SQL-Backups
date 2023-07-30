@@ -25,7 +25,8 @@ begin
     remote_backups = b2_enabled ? `./b2 ls #{config['b2']['bucket_name']}`.split("\n") : []
 
     if local_backups.empty? && remote_backups.empty?
-      logger.error('No backup found. Please ensure a backup exists in the local directory or in the B2 bucket (if B2 is enabled).')
+      logger.error('No backup found. Please ensure a backup exists in the local directory
+                    or in the B2 bucket (if B2 is enabled).')
       exit 1
     end
 
