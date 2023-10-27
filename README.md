@@ -10,10 +10,10 @@ If you need more direct help, join our [Discord](https://discord.gg/SQeWBWS8v4)
 ## Installation
 
 To use this program, you'll need to run the following: (this is  fixed now!)
-[Source](https://raw.githubusercontent.com/PixelRidge-Softworks/Installers/main/install.sh)
+[Source](https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/raw/branch/main/install.sh)
 
 ```bash
-wget https://raw.githubusercontent.com/PixelRidge-Softworks/Installers/main/install.sh && bash ./install.sh
+wget https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/raw/branch/main/install.sh && bash ./install.sh
 ```
 
 ## Configuration
