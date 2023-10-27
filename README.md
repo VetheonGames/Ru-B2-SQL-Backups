@@ -38,6 +38,11 @@ You can also run this program via Cron. For example, this Crontab would run the 
 0 */6 * * * /usr/bin/PixelatedStudios/Ruby/Ru-B2-SQL-Backups/starter.rb
 ```
 
+For easier access, you can also add this to your system path:
+
+```bash
+/usr/bin/PixelRidge-Softworks/Ruby/Ru-B2-SQL-Backups/rub2
+```
 
 This will perform a backup of the MySQL database according to the configuration settings. If Backblaze B2 backups are enabled, the program will upload the backup file to the cloud storage bucket.
 
@@ -48,12 +53,12 @@ To update the program, simply pull the latest changes from the Git repository an
 If you need to change the configuration settings, simply delete the `config.json` file and run the program again to be prompted for new configuration details.
 
 ~~To delete old backups, the program will check for backups that are older than `local_retention_days` days (default 30) and delete them. To modify this time window, edit the `max_age_days` variable in the `delete_old_backups` method of the `MysqlDatabaseBackup` class.~~
- 
+
 ^^ This is no longer applicable, you can now set the retention time in the config.json
 
 ## Compatibility
 
-This program is compatible with Debian and RHEL based systems, but could be made to work with any systems compatible with Ruby, Python3, and Bash. 
+This program is compatible with Debian and RHEL based systems, but could be made to work with any systems compatible with Ruby, Python3, and Bash.
 
 This program was also built on Arch Linux, so it should also run fine on Manjaro, Arch, and any other Arch based distro.
 
