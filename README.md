@@ -39,6 +39,10 @@ You can also run this program via Cron. For example, this Crontab would run the 
 0 */6 * * * /usr/bin/PixelRidge-Softworks/Ruby/Ru-B2-SQL-Backups/rub2
 ```
 
+For easier access, you can also add this to your system path:
+```bash
+/usr/bin/PixelRidge-Softworks/Ruby/Ru-B2-SQL-Backups/rub2
+```
 
 This will perform a backup of the MySQL database according to the configuration settings. If Backblaze B2 backups are enabled, the program will upload the backup file to the cloud storage bucket.
 
