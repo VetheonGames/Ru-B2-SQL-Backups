@@ -11,10 +11,10 @@ If you need more direct help, join our [Discord](https://discord.gg/SQeWBWS8v4)
 ## Installation
 
 To use this program, you'll need to run the following: (this is  fixed now!)
-[Source](https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/raw/branch/main/install.sh)
+[Source](https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/src/branch/main/rub2/install.sh)
 
 ```bash
-wget https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/raw/branch/main/install.sh && bash ./install.sh
+wget https://git.pixelridgesoftworks.com/PixelRidge-Softworks/Installers/src/branch/main/rub2/install.sh && bash ./install.sh
 ```
 
 ## Configuration
