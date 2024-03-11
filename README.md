@@ -6,7 +6,7 @@ Please put any feature suggestions into [Issues](https://github.com/PixelRidge-S
 If you'd like to help with the development of Ru(b2)SQL Backups, you can clone this repository and then create a Pull Request. If we don't find any issues, we will merge the PR.
 
 If you'd like to support PixelRidge Softworks OpenSource Development, check out our [Patreon](https://patreon.com/PixelRidgeSoftworksOSP)
-If you need more direct help, join our [Discord](https://discord.gg/SQeWBWS8v4)
+If you need more direct help, join our [Discord](https://discord.pixelridgesoftworks.com)
 
 ## Installation
 
